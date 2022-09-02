@@ -1,0 +1,12 @@
+// trabalhar com radio button
+
+$('#btnVerificar').click(function () {
+	if ($('#rdbMasc').is('checked')) {
+	   $('#lblResultado').text("Masculino");
+	}
+
+	if ($('#rdbFem').is('checked')) {
+	   $('#btnFem').text("Feminino");
+	}
+});
+
