@@ -1,75 +1,109 @@
 $(document).ready(function() {
 
-    // Setar botão btnVerificar
-    $('#btnVerificar').click(function () {
+  /*
+  * Setar botão btnVerificar
+  */
+  $('#btnVerificar').click(function () {
 
-        // dados iniciais
-        let valoresNaoInteiros, inicioMenorOuIgual, rdbCheckado;
-        let pares = ''; 
-        let impares = '';
+    /*
+     * Dados iniciais
+    */
+    let valoresNaoInteiros, inicioMenorOuIgual, algumRdbCheckado;
 
-        // Pegar valores 
-        let lblResultado = $('#lblResultado');
-        let lblErro = $('#lblErro');
-        let txtInicio = parseInt($('#txtInicio').val());
-        let txtFim = parseInt($('#txtFim').val());
-        let rdbPar = $('#rdbPar').is(':checked');
-        let rdbImpar = $('#rdbImpar').is(':checked');
+    let pares = ''; 
+    let impares = '';
 
 
-        // verificar se é um numero
-        if (isNaN(txtInicio) || isNaN(txtFim)) {
-            valoresNaoInteiros = true;
-            lblErro.text("Insira valores inteiros!");
+    /*
+     *> Pegar valores 
+    */
+    let lblResultado = $('#lblResultado');
 
-        } else {
-            valoresNaoInteiros = false;
+    let txtInicio = parseInt($('#txtInicio').val());
+    let txtFim = parseInt($('#txtFim').val());
+
+    let rdbPar = $('#rdbPar');
+    let rdbImpar = $('#rdbImpar');
+
+
+    /*
+     * Verificações dos Requisitos
+    */
+
+    // -> Verificar se é um numero
+    valoresNaoInteiros = isNaN(txtInicio) || isNaN(txtFim);
+    if (valoresNaoInteiros) {
+      valoresNaoInteiros = true;
+      alert("Insira valores inteiros!");
+    } else {
+        valoresNaoInteiros = false;
+    }
+
+    // -> Verificar se inicio é maior ou igual ao fim
+    inicioMenorOuIgual = txtInicio <= txtFim;
+    if (inicioMenorOuIgual) {
+      inicioMenorOuIgual = true;    
+    } else {
+      inicioMenorOuIgual = false;
+      alert("O valor de inicio deve ser menor ou igual a fim!");
+    }
+
+    // -> Verificar se algum radio button está checkado
+    algumRdbCheckado = rdbPar.is(':checked') || rdbImpar.is(':checked')
+    if (algumRdbCheckado) {
+      algumRdbCheckado = true;
+    } else {
+      algumRdbCheckado = false;
+      alert("Você deve escolher se vai ser   'par' ou 'impar'");
+    }
+
+
+    /*
+     * Autenticar se todos os requisitos são favoraveis
+    */
+    if (
+      !valoresNaoInteiros && 
+      inicioMenorOuIgual  && 
+      algumRdbCheckado
+    ) {
+
+      if (rdbPar.is(':checked')) {
+        for (let i = txtInicio; i <= txtFim; i++) {
+          if (i % 2 == 0) {
+            pares += " [ " + i + " ] ";
+          }
         }
-        // verificar se inicio é maior ou igual ao fim
-        if (txtInicio <= txtFim) {
-            inicioMenorOuIgual = true;
-        } else {
-            lblErro.text("O valor de inicio deve ser menor ou igual a fim!");
-            inicioMenorOuIgual = false;
-        }
-        // verificar se algum radio button está checkado
-        if (rdbPar || rdbImpar) {
-            rdbCheckado = true;
-        } else {
-            lblErro.text("Você deve escolher se vai ser 'par' ou 'impar'");
-            rdbCheckado = false;
+
+        lblResultado.text(pares);
+      }
+
+      if (rdbImpar.is(':checked')) {
+        for (let i = txtInicio; i <= txtFim; i++) {
+          if (i % 2 > 0) {
+            impares += " [ " + i + " ] ";
+          }
         }
 
+        lblResultado.text(impares);
+      }
+    }
 
-        if (!valoresNaoInteiros && inicioMenorOuIgual && rdbCheckado) {
-
-            if (rdbPar) {
-                for (let i = txtInicio; i <= txtFim; i++) {
-                    if (i % 2 == 0) {
-                        pares += " [ " + i + " ] ";
-                    }
-                }
-
-                lblResultado.text(pares);
-            }
-
-            if (rdbImpar) {
-                for (let i = txtInicio; i <= txtFim; i++) {
-                    if (i % 2 > 0) {
-                        impares += " [ " + i + " ] ";
-                    }
-                }
-
-                lblResultado.text(impares);
-            }
-        }
-
-    });
+  });
 
 
-    $('#btnLimpar').click(function () {
-        txtFim.text("");
-        txtInicio.text("");
-    });
+  /*
+  * Setar botão btnLimpar
+  */  
+  $('#btnLimpar').click(function () {
+
+    $('#txtInicio').val(" ");
+    $('#txtFim').val(" ");
+
+    $('#lblResultado').text(" ");
+
+    $('#rdbPar').prop('checked', false);
+    $('#rdbImpar').prop('checked', false);
+
+  });
 
 });
