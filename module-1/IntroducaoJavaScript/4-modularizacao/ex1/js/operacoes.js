@@ -30,6 +30,11 @@ $(document).ready(function () {
     return multiplicar(Math.PI, multiplicar(r, r));
   }
 
+  function areaQuadrado(l) {
+    // PI * (r * r)
+    return multiplicar(l, l);
+  }
+
 
   $('#btnCalcular').click(function () {
 
@@ -57,6 +62,10 @@ $(document).ready(function () {
     } else if ($('#rdbAreaCirculo').is(":checked")){
 
       resultadoOperacao = areaCirculo(valor1);
+
+    } else if ($('#rdbAreaQuadrado').is(":checked")){
+
+      resultadoOperacao = areaQuadrado(valor1);
 
     }
 
