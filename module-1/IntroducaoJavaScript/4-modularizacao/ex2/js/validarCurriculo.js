@@ -12,12 +12,10 @@ $(document).ready(function () {
   }
 
   function calculoDigito10(digitos) {
+    let mult = 0, soma = 0;
     let digito10 = 0;
-    let soma = 0;
-    let mult = 0;
-    let d = 0;
 
-    for (let i = 10; i >= 2; i--) {
+    for (let i = 10, d = 0; i >= 2; i--, d++) {
       let digito = parseInt(digitos[d]);
 
       mult = digito * i;
@@ -37,17 +35,17 @@ $(document).ready(function () {
 
     digitos.push(digi10);
 
-    for (let i = 11, d = 0; i >= 2; i++, d++) {
+    for (let i = 11, d = 0; i >= 2; i--, d++) {
       let digito = parseInt(digitos[d]);
 
       mult = digito * i;
       soma += mult;
     }
 
-    resto = soma;
+    resto = soma % 11;
 
     digito11 = Math.abs( obterDigito(resto) );
-    
+	
     return (digito11);
   }
 
@@ -81,7 +79,7 @@ $(document).ready(function () {
     console.log(digito10);
 
     digito11 = calculoDigito11(noveDigitos, digito10);
-    console.log("helloqwwwwe");
+    console.log(digito11);
   });
 
 }); 
