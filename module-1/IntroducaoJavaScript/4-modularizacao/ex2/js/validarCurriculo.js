@@ -3,6 +3,53 @@ $(document).ready(function () {
   function pegarValDoCampo(elment) {
     return $(elment).val();
   }
+  function obterDigito(res) {
+    if (res < 2) {
+      return  0;
+    } else if (res > 2) {
+      return (res - 11);
+    }
+  }
+
+  function calculoDigito10(digitos) {
+    let digito10 = 0;
+    let soma = 0;
+    let mult = 0;
+    let d = 0;
+
+    for (let i = 10; i >= 2; i--) {
+      let digito = parseInt(digitos[d]);
+
+      mult = digito * i;
+      soma += mult;
+      d++;
+    }  
+
+    resto = soma % 11;
+
+    digito10 = Math.abs( obterDigito(resto) );
+
+    return (digito10);
+  }
+  function calculoDigito11(digitos, digi10) {
+    let mult = 0, soma = 0;
+    let digito11 = 0;
+
+    digitos.push(digi10);
+
+    for (let i = 11, d = 0; i >= 2; i++, d++) {
+      let digito = parseInt(digitos[d]);
+
+      mult = digito * i;
+      soma += mult;
+    }
+
+    resto = soma;
+
+    digito11 = Math.abs( obterDigito(resto) );
+    
+    return (digito11);
+  }
 
 
 
@@ -15,35 +62,26 @@ $(document).ready(function () {
     let txtEndereco = pegarValDoCampo('#txtEndereco');
     let txtareaExperiencia = pegarValDoCampo('#txtareaExperiencia');
 
-    // if (isNaN(txtCpf)) {
 
-    // }
     // # Dados Iniciais
-    let novePrimeirosDigitos = [];
+    let noveDigitos = [];
     let doisUltimosDigitos = [];
+    let digito10 = 0;
+    
 
-    for (let i = 0; i <= txtCpf.length; i++) {
+    for (let i = 0; i <= txtCpf.length - 1; i++) {
       if (i > 8) {
         doisUltimosDigitos.push(txtCpf[i]);
       } else {
-        novePrimeirosDigitos.push(txtCpf[i]);
+        noveDigitos.push(txtCpf[i]);
       }
     }
-    doisUltimosDigitos.pop();
+ 
+    digito10 = calculoDigito10(noveDigitos);
+    console.log(digito10);
 
-
-    let acc = 0;
-    let mult = 0;
-    let d = 0;
-
-    for (let i = 10; i >= novePrimeirosDigitos.length; i--) {
-      let digito = parseInt(novePrimeirosDigitos[d]);
-      mult =  digito * i;
-      acc += mult;
-      console.log(i);
-    }
-
-    console.log(acc);
+    digito11 = calculoDigito11(noveDigitos, digito10);
+    console.log("helloqwwwwe");
   });
 
 }); 
