@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio Algoritmo CPF</title>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/validarCurriculo.js"></script>
+</head>
+
+<body>
+
+    <h1>Curriculo Vitae</h1>
+
+    <div>
+        <div>
+            <label for="txtNome">Nome</label>
+            <input type="text" name="txtNome" id="txtNome" />
+        </div>
+
+        <div>
+            <label for="txtTelefone">Telefone</label>
+            <input type="text" name="txtTelefone" id="txtTelefone" />
+        </div>
+
+        <div>
+            <label for="txtCpf">CPF</label>
+            <input type="text" name="txtCpf" id="txtCpf" />
+        </div>
+
+        <div>
+            <label for="txtEndereco">Endereço</label>
+            <input type="text" name="txtEndereco" id="txtEndereco" />
+        </div>
+
+        <div>
+            <div>
+                <input type="radio" name="escolarida" id="rdbAnalfabeto" />
+                <label for="rdbAnalfabeto">Analfabeto</label>
+            </div>
+
+            <div>
+                <input type="radio" name="escolarida" id="rdbEFIncompleto" />
+                <label for="rdbEFIncompleto">Ensino Fundamental Incompleto</label>
+            </div>
+
+            <div>
+                <input type="radio" name="escolarida" id="rdbEFCompleto" />
+                <label for="rdbEFCompleto">Ensino Fundamental Completo</label>
+            </div>
+
+            <div>
+                <input type="radio" name="escolarida" id="rdbEMIncompleto" />
+                <label for="rdbEMIncompleto">Ensino Medio Incompleto</label>
+            </div>
+
+            <div>
+                <input type="radio" name="escolarida" id="rdbEMCompleto" />
+                <label for="rdbEMCompleto">Ensino Medio Completo</label>
+            </div>
+
+            <div>
+                <input type="radio" name="escolarida" id="rdbESCompleto" />
+                <label for="rdbESCompleto">Ensino Superior</label>
+            </div>
+        </div>
+
+        <div>
+            <label for="txtareaExperiencia">Experiência Profissional</label>
+            <br>
+            <textarea name="txtareaExperiencia" id="txtareaExperiencia">
+            </textarea>
+        </div>
+
+        <button type="button" id="btnCadastrar">
+            Cadastrar curriculo
+        </button>
+    </div>
+
+</body>
+
+</html>
