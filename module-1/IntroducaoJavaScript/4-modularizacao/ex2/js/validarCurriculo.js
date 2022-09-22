@@ -67,7 +67,7 @@ $(document).ready(function () {
 		let noveDigitos = [];
 		let doisDigitos = [];
 
-		for (let i = 0; i <= cpf.length - 1; i++) {
+		for (let i = 0; i < cpf.length; i++) {
 			let digito = cpf[i];
 			if (i > 8) {
 				doisDigitos.push(digito);
@@ -81,8 +81,7 @@ $(document).ready(function () {
 
 	// # Validar se o CPF é valido ou não
 	function validarCpf(entrada1, entrada2) {
-		for (let i = 0; i <= entrada1.length - 1; i++) {
-			console.log(entrada1[i] + " == " + entrada2[i]);
+		for (let i = 0; i < entrada1.length; i++) {
 			if (entrada1 == entrada2) {
 				return true;
 			} else {
@@ -118,10 +117,8 @@ $(document).ready(function () {
 
 		// # Efetuar os calculos dos ultimos digitos do CPF
 		digito10 = calcDigito10(noveDigitos);
-		console.log(digito10);
 
 		digito11 = calcDigito11(noveDigitos, digito10);
-		console.log(digito11);
 
 
 		// # Verfificar os digitos ultimos digitos do CPF
@@ -135,7 +132,7 @@ $(document).ready(function () {
 			txtsObrigadoriosValidos = false;
 			$('#lblErroCpf').text = "Insira um CPF valido!";
 		}
-		if (!iestaVazio(txtNome)) {
+		if (!estaVazio(txtNome)) {
 			txtsObrigadoriosValidos = true;
 		} else {
 			txtsObrigadoriosValidos = false;
@@ -153,8 +150,33 @@ $(document).ready(function () {
 			txtsObrigadoriosValidos = false;
 			$('#lblErroEnder').text = "Campo obrigadorio!";
 		}
+		
 
-
+		function temDigitosIguais(cpf) {
+			let qtdeDigitosIguais = 0;
+			for (let d = 0; d <= cpf.length ; d++) {
+				let i = d + 1;
+				if (cpf[d] == cpf[i]) {
+					qtdeDigitosIguais++;
+				}
+			}
+			
+			if (qtdeDigitosIguais == 11) {
+				return false;
+			} else {
+				return true;
+			}
+		}
+		
+		// # Validar se os digitos são iguais
+		if (!temDigitosIguais(txtCpf)) {
+			txtsObrigadoriosValidos = true;
+		} else {
+			txtsObrigadoriosValidos = false;
+			$('#lblErroCpf').text = "CPF invalido!";
+		}
+		
+		
 		// # Verfificar os digitos ultimos digitos do CPF
 		if (txtsObrigadoriosValidos) {
 			$('#lblMsg').text = "Curriculo cadastrado com sucesso!";
