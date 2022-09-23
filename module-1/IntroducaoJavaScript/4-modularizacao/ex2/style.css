@@ -1,0 +1,24 @@
+.container {
+    max-width: 23vw;
+}
+
+.flex {
+    display: flex;
+    flex: 1 auto;
+}
+
+.direction-row {
+    flex-direction: column;
+}
+
+.row-input {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+input[type=text],
+input[type=number],
+textarea {
+    width: 100%;
+}

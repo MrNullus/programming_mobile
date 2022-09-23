@@ -127,6 +127,7 @@ $(document).ready(function () {
 		if (cpfValido) {
 			return true;
 		} else {
+			setarTextoLabel('#lblMsg', "Curriculo cadastrado com sucesso!");
 			setarTextoLabel('#lblErroCpf', "Insira um CPF valido!");
 			return false;
 		}
@@ -142,33 +143,33 @@ $(document).ready(function () {
 		let txtCpf = pegarValDoCampo('#txtCpf', false);
 		let txtEndereco = pegarValDoCampo('#txtEndereco', false);
 
-		// # Verificação inicial dos campos obrigadorios
+		// # Verificação inicial dos campos obrigatorios
 		if (!estaVazio(txtNome)) {
 			txtsObrigadoriosVazios = false;
 		} else {
 			txtsObrigadoriosVazios = true;
-			setarTextoLabel('#lblErroNome', "Campo obrigadorio!");
+			setarTextoLabel('#lblErroNome', "Campo obrigatorio!");
 		}
 
 		if (!isNaN(txtTelefone) || !estaVazio(txtTelefone)) {
 			txtsObrigadoriosVazios = false;
 		} else {
 			txtsObrigadoriosVazios = true;
-			setarTextoLabel('#lblErroTel', "Campo obrigadorio!");
+			setarTextoLabel('#lblErroTel', "Campo obrigatorio!");
 		}
 
 		if (!isNaN(txtCpf) || !estaVazio(txtCpf)) {
 			txtsObrigadoriosVazios = false;
 		} else {
 			txtsObrigadoriosVazios = true;
-			setarTextoLabel('#lblErroCpf', "Campo obrigadorio!");
+			setarTextoLabel('#lblErroCpf', "Campo obrigatorio!");
 		}
 
 		if (!estaVazio(txtEndereco)) {
 			txtsObrigadoriosVazios = false;
 		} else {
 			txtsObrigadoriosVazios = true;
-			setarTextoLabel('#lblErroEnder', "Campo obrigadorio!");
+			setarTextoLabel('#lblErroEnder', "Campo obrigatorio!");
 		}
 
 		// # Verificações secundarias

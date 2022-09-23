@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio Algoritmo CPF</title>
 
+    <link rel="stylesheet" href="style.css">
+
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/validarCurriculo.js"></script>
 </head>
@@ -15,8 +17,8 @@
 
     <h1>Curriculo Vitae</h1>
 
-    <div>
-        <div>
+    <div class="container flex direction-row">
+        <div class="row-input">
             <label for="txtNome">Nome</label>
             <input 
                 type="text" 
@@ -27,7 +29,7 @@
 			<label id="lblErroNome"></label>
         </div>
 
-        <div>
+        <div class="row-input">
             <label for="txtTelefone">Telefone</label>
             <input 
                 type="text" 
@@ -39,7 +41,7 @@
 			<label id="lblErroTel"></label>
         </div>
 
-        <div>
+        <div class="row-input">
             <label for="txtCpf">CPF</label>
             <input 
                 type="number" 
@@ -51,7 +53,7 @@
 			<label id="lblErroCpf"></label>
         </div>
 
-        <div>
+        <div class="row-input">
             <label for="txtEndereco">Endereço</label>
             <input 
                 type="text" 
@@ -62,7 +64,7 @@
 			<label id="lblErroEnder"></label>
         </div>
 
-        <div>
+        <div class="">
             <p>Escolaridade</p>
             <div>
                 <input type="radio" name="escolarida" id="rdbAnalfabeto" />
