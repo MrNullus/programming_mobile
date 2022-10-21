@@ -20,35 +20,26 @@ class Util {
 
             return calc.Soma( valor1, valor2 );
 
-        } else if (rdbCheckado == 'rdbSoma') {
+        } else if (rdbCheckado == 'rdbSubtracao') {
             
-            case 'rdbSubtracao':
-                return calc.Subtracao( valor1, valor2 );
+            return calc.Subtracao( valor1, valor2 );
 
-            case 'rdbMultiplicar':
-                return calc.Multiplicar( valor1, valor2 );
-
-            case 'rdbDivisao':
-                return calc.Divisao( valor1, valor2 );
-                
-
-            case 'rdbAreaQuadrado':
-                return calc.AreaQuadrado( valor1, valor2 );
-
-            case 'rdbAreaTriangulo':
-                return calc.AreaTriangulo( valor1, valor2 );
-
-            case 'rdbAreaRetangulo':
-                return calc.AreaRetangulo( valor1, valor2 );
-
-            case 'rdbParOuImpar':
-                return calc.ParOuImpar( valor1 );
-
-            case 'rdbImc':
-                return calc.Imc( valor1, valor2 );
-
-            else {
-                return;
+        }  else if (rdbCheckado == 'rdbMultiplicar') {
+            return calc.Multiplicar( valor1, valor2 );
+        } else if (rdbCheckado == 'rdbDivisao') {
+            return calc.Divisao( valor1, valor2 );
+        } else if (rdbCheckado == 'rdbAreaQuadrado') {
+            return calc.AreaQuadrado( valor1, valor2 );
+        } else if (rdbCheckado == 'rdbAreaTriangulo') {
+            return calc.AreaTriangulo( valor1, valor2 );
+        } else if (rdbCheckado == 'rdbAreaRetangulo') {
+            return calc.AreaRetangulo( valor1, valor2 );
+        } else if (rdbCheckado == 'rdbParOuImpar') {
+            return calc.ParOuImpar( valor1 );
+        } else if (rdbCheckado == 'rdbImc') {
+            return calc.Imc( valor1, valor2 );
+        } else {
+            return;
         }
     }
 
