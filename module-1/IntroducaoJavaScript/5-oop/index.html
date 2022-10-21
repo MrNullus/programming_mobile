@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>OOP - JS</title>
+
+    <style>
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+            width: 300px;
+        }
+    </style>
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/Util.js"></script>
+    <script src="./js/Validacao.js"></script>
+    <script src="./js/Calculador.js"></script>
+    <script src="./js/funcoes.js"></script>
+</head>
+
+<body>
+
+    <div style="margin: 2rem 0;">
+        <div style="margin: 1.2rem 0;">
+            <label for="txtValor1">Valor 1</label>
+            <input type="text" name="txtValor1" id="txtValor1" />
+        </div>
+    
+        <div>
+            <label for="txtValor2">Valor 2</label>
+            <input type="text" name="txtValor2" id="txtValor2" />
+        </div>
+    </div>
+    
+
+    <div>
+        <div class="radio-group">        
+            <div>
+                <input type="radio" name="opts" value="rdbSoma" id="rdbSoma" />
+                <label for="rdbSoma">Soma</label>
+            </div>
+        
+            <div>
+                <input type="radio" name="opts" value="rdbSubtracao" id="rdbSubtracao" />
+                <label for="rdbSubtracao">Subtração</label>
+            </div>
+        
+            <div>
+                <input type="radio" name="opts" value="rdbMultiplicar" id="rdbMultiplicar" />
+                <label for="rdbMultiplicar">Multiplicação</label>
+            </div>
+        
+            <div>
+                <input type="radio" name="opts" value="rdbDivisao" id="rdbDivisao" />
+                <label for="rdbDivisao">Divisão</label>
+            </div>
+        
+            <div>
+                <input type="radio" name="opts" value="rdbAreaQuadrado" id="rdbAreaQuadrado" />
+                <label for="rdbAreaQuadrado">Área Quadrado</label>
+            </div>
+        
+            <div>
+                <input type="radio" name="opts" value="rdbAreaCirculo" id="rdbAreaCirculo" />
+                <label for="rdbAreaCirculo">Área Circulo</label>
+            </div>
+        
+            <div>
+                <input type="radio" name="opts" value="rdbAreaTriangulo" id="rdbAreaTriangulo" />
+                <label for="rdbAreaTriangulo">Área Triângulo</label>
+            </div>
+        
+            <div>
+                <input type="radio" name="opts" value="rdbAreaRetangulo" id="rdbAreaRetangulo" />
+                <label for="rdbAreaRetangulo">Área Retangulo</label>
+            </div>
+        
+            <div>
+                <input type="radio" name="opts" value="rdbParOuImpar" id="rdbParOuImpar" />
+                <label for="rdbParOuImpar">Par - Impar</label>
+            </div>
+        
+            <div style="margin-bottom: 2rem;">
+                <input type="radio" name="opts" value="rdbImc" id="rdbImc" />
+                <label for="rdbImc">IMC</label>
+            </div>
+        </div>
+    
+        <button type="button" id="btnCalcular">Calcular</button>
+        <button type="button" id="btnLimpar">Limpar</button>
+    </div>
+</body>
+
+</html>
