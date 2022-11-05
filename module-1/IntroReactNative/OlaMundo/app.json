@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "OlaMundo",
+    "slug": "OlaMundo",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
