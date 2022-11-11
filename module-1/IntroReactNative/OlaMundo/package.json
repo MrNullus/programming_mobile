@@ -20,5 +20,8 @@
   "devDependencies": {
     "@babel/core": "^7.12.9"
   },
-  "private": true
+  "private": true,
+  "rnpm": {
+    "assets": ["assets/fonts/Sarpanch"]
+   }
 }
