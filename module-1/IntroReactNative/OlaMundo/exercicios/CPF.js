@@ -9,7 +9,7 @@ export default class CPF extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { cpf: '', resultado: '' }
+    this.state = { cpf: '', resultado: '' };
 
     this.verificarCpfDigitado = this.verificarCpfDigitado.bind(this);
   }
@@ -57,6 +57,7 @@ export default class CPF extends Component {
   }
 
 }
+
 
 const styles = StyleSheet.create({
 

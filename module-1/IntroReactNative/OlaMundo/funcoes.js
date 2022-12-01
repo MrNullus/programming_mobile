@@ -103,10 +103,10 @@ export function verificarCpf(cpf) {
         ultimos2Digitos, ultimosDigiCalculados
     );
 
-    console.log(digito11);
+    console.log("Digitos finais: " + digito10 + digito11);
 
     // # Validar os campos que devem ser validos (cpf valido e outros que não devem ser vazios)
-    if (cpfValido) {
+    if (cpfValido && cpf.length == 11) {
         return true;
     } else {
         return false;
