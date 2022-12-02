@@ -59,6 +59,7 @@ export default class IMC extends Component {
 
     calcularImc() {
         // realizar calculo do IMC
+        let resultado = '';
         let peso = this.state.peso;
         let altura = this.state.altura;
 		let imc = (peso / (altura ** 2)).toFixed(2);
@@ -79,6 +80,8 @@ export default class IMC extends Component {
 		} else {
 			resultado = "Erro! Digite os dados corretamente.";
 		}
+
+        this.setState({ resultado: resultado });
     }
 }
 

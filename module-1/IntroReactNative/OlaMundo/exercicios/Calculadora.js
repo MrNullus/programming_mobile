@@ -65,7 +65,7 @@ export default class exercicios extends Component {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={this.calcular}
+                    onPress={this.multiplicar}
                     style={styles.botao}
                 >
                     <Text style={styles.texto}>
