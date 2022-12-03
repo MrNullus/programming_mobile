@@ -35,6 +35,7 @@ export default class Login extends Component {
         </Text>
         <TextInput
           style={ styles.input }
+          secureTextEntry={true}
           onChangeText={( senhaDigitada ) => {
             this.setState({ senha : senhaDigitada })
           }}
